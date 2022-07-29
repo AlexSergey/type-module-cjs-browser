@@ -16,7 +16,7 @@ module.exports = {
     jest: true,
   },
   ignorePatterns: ['.eslintrc.cjs'],
-  plugins: ['import', 'unicorn', '@typescript-eslint', 'sort-keys-fix', 'file-extension-in-import-ts', 'check-file'],
+  plugins: ['import', 'unicorn', '@typescript-eslint', 'sort-keys-fix', 'check-file'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -135,8 +135,6 @@ module.exports = {
         'src/**/': 'KEBAB_CASE',
       },
     ],
-
-    'file-extension-in-import-ts/file-extension-in-import-ts': 'error',
   },
   overrides: [
     {
