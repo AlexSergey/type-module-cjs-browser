@@ -99,3 +99,47 @@ import dir from './dir.cjs';
 
 console.log(dir);
 ```
+
+## TSC Declaration
+
+If you need to use different types declarations for each of modules you can use field "typesVersions" in your package.json:
+
+```json
+{
+  "typesVersions": {
+    "*": {
+      "import": [
+        "./dist/types/**/*"
+      ],
+      "require": [
+        "./dist/types/**/*"
+      ]
+    },
+    "./browser": [
+      "./dist/browser-types/**/*"
+    ]
+  }
+}
+```
+
+also you can use different types for your package versions:
+
+```json
+{
+  "name": "package-name",
+  "version": "1.0",
+  "types": "./index.d.ts",
+  "typesVersions": {
+    ">=3.2": {
+      "*": [
+        "ts3.2/*"
+      ]
+    },
+    ">=3.1": {
+      "*": [
+        "ts3.1/*"
+      ]
+    }
+  }
+}
+```
