@@ -15,12 +15,14 @@
   "author": "Aleksandrov Sergey <gooddev.sergey@gmail.com>",
   "type": "module",
   "exports": {
-    ".": "./dist/module/index.js",
-    "./require": "./dist/cjs/index.cjs",
+    ".": {
+      "import": "./dist/module/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
     "./browser": "./dist/browser/index.js"
   },
   "main": "./dist/module/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
     "build": "npm run lint:ts && npm run build:cjs && npm run build:module && npm run build:declaration && npm run build:browser",
     "build:browser": "webpack --mode production",

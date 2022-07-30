@@ -44,12 +44,14 @@ dist/
 {
   "type": "module",
   "main": "./dist/module/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
-    ".": "./dist/module/index.js",
-    "./require": "./dist/cjs/index.cjs",
+    ".": {
+      "import": "./dist/module/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
     "./browser": "./dist/browser/index.js"
-  }
+  },
 }
 ```
 
@@ -66,7 +68,7 @@ import { helloWorld } from 'my-module';
 If we use this module in the old app with commonjs syntax it will be:
 
 ```js
-const { helloWorld } = require('my-module/require');
+const { helloWorld } = require('my-module');
 ```
 
 ### Browser
@@ -75,4 +77,25 @@ for browser usage we will use webpack to compile source code. The import will us
 
 ```js
 import { helloWorld } from 'my-module/browser';
+```
+
+### .mjs/.cjs
+
+You can also use ".mjs" and ".cjs" extensions with below settings.
+
+- .mjs - files are always ES modules
+- .cjs - files are always CommonJS modules
+
+If you want to use common js file in "type module", the file must have cjs ext and the code will be:
+
+```js
+// @filename: dir.cjs
+
+module.exports = __dirname;
+
+// @filename: index.js
+
+import dir from './dir.cjs';
+
+console.log(dir);
 ```

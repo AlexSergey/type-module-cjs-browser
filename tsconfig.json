@@ -3,22 +3,21 @@
     "baseUrl": "src/",
     "outDir": "./dist/",
 
+    // Node.js 16
+    "module": "ESNext",
+    "target": "ES2021",
     "moduleResolution": "node",
     "esModuleInterop": true,
-
-    "module": "ESNext",
-    "target": "ES2020", // Node.js 14
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2021"
+    ],
 
     "sourceMap": true,
     "removeComments": false,
     "resolveJsonModule": true,
     "newLine": "lf",
-
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2020"
-    ],
 
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
