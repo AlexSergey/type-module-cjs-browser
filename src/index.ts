@@ -1,4 +1,4 @@
-import { helloWorld } from './common/messages/message';
+import { helloWorld } from './common/messages/message.js';
 
 export const bootstrap = (): void => {
   // eslint-disable-next-line no-console

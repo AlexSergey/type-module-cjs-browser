@@ -8,9 +8,9 @@
       "es2022",
       "dom"
     ],
-    "module": "es2022",
+    "module": "NodeNext",
     "target": "ES2022",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
 
     "sourceMap": true,

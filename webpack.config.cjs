@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  target: "web",
+  target: 'web',
   output: {
     libraryTarget: 'module',
     path: path.resolve(__dirname, './dist/browser'),
@@ -28,6 +28,9 @@ module.exports = {
     outputModule: true
   },
   resolve: {
+    extensionAlias: {
+      '.js': ['.ts', '.js'],
+    },
     extensions: ['.ts'],
   }
 };
