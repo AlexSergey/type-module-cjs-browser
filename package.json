@@ -36,9 +36,9 @@
     "lint": "npm run lint:ts && npm run lint:code",
     "lint:code": "eslint --ext .ts,.json src/",
     "lint:ts": "tsc --noEmit",
+    "prepare": "husky install",
     "publish": "npm publish",
-    "publish:dry-run": "npm publish --dry-run",
-    "prepare": "husky install"
+    "publish:dry-run": "npm publish --dry-run"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
