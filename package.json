@@ -36,6 +36,8 @@
     "lint": "npm run lint:ts && npm run lint:code",
     "lint:code": "eslint --ext .ts,.json src/",
     "lint:ts": "tsc --noEmit",
+    "publish": "npm publish",
+    "publish:dry-run": "npm publish --dry-run",
     "prepare": "husky install"
   },
   "devDependencies": {
