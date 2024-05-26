@@ -64,7 +64,7 @@ module.exports = {
         'plugin:prettier/recommended',
         'plugin:perfectionist/recommended-natural',
         'plugin:regexp/recommended',
-        'plugin:sonarjs/recommended',
+        'plugin:sonarjs/recommended-legacy',
       ],
       rules: {
         'no-unused-vars': 'off',
