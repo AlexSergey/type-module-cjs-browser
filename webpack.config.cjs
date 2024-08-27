@@ -2,35 +2,33 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.ts',
-  target: 'web',
-  output: {
-    libraryTarget: 'module',
-    path: path.resolve(__dirname, './dist/browser'),
-    filename: 'index.js',
+  experiments: {
+    outputModule: true,
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
         exclude: /node_modules/,
+        test: /\.ts$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              '@babel/preset-typescript'
-            ]
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-typescript'],
+          },
+        },
+      },
+    ],
   },
-  experiments: {
-    outputModule: true
+  output: {
+    filename: 'index.js',
+    libraryTarget: 'module',
+    path: path.resolve(__dirname, './dist/browser'),
   },
   resolve: {
     extensionAlias: {
       '.js': ['.ts', '.js'],
     },
     extensions: ['.ts'],
-  }
+  },
+  target: 'web',
 };
