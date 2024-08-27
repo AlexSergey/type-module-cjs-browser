@@ -38,7 +38,8 @@
     "lint:ts": "tsc --noEmit",
     "prepare": "husky",
     "publish": "npm publish",
-    "publish:dry-run": "npm publish --dry-run"
+    "publish:dry-run": "npm publish --dry-run",
+    "test": "echo \"Error: no test specified\""
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
