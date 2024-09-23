@@ -18,7 +18,7 @@ const root = join(__dirname, src);
 const type = argv.type === 'module' ? 'module' : 'cjs';
 const isModule = type === 'module';
 const extensions = ['.ts', '.tsx'];
-const outputExt = isModule ? '.js' : '.cjs';
+const outputExt = isModule ? '.mjs' : '.cjs';
 
 export default () => {
   return gulp
@@ -26,7 +26,7 @@ export default () => {
     .pipe(
       babel({
         plugins: isModule
-          ? [['babel-plugin-add-import-extension', { extension: 'js' }]]
+          ? [['babel-plugin-add-import-extension', { extension: 'mjs' }]]
           : [['babel-plugin-add-import-extension', { extension: 'cjs' }], '@babel/plugin-transform-modules-commonjs'],
         presets: ['@babel/preset-typescript'],
       }),
