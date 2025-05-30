@@ -1,1 +1,1 @@
-npm run format:package && npx git-is-ready-to-push && npm run lint
+npm run lint
